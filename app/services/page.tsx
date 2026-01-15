@@ -61,15 +61,15 @@ export default function ServicesPage() {
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-primary text-white">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
               Ready to Transform Your Digital Presence?
             </h2>
-            <p className="text-lg md:text-xl mb-10 text-white font-medium leading-relaxed">
+            <p className="text-lg md:text-xl mb-10 text-black font-medium leading-relaxed">
               Contact us today for a free consultation and let's discuss how we can help your business grow.
             </p>
             <Link
               href="/#contact"
-              className="inline-block px-10 py-5 rounded-lg font-bold text-lg bg-white text-primary hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-gray-100"
+              className="inline-block px-10 py-5 rounded-lg font-bold text-lg bg-primary text-white hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-gray-100"
             >
               Get Started
             </Link>

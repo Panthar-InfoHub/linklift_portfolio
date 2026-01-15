@@ -25,7 +25,7 @@ export function TrustedBrandsSection() {
                 className="rounded-lg h-32 flex items-center justify-center bg-white border border-border p-4 hover:shadow-lg transition-all duration-300 hover:scale-105 flex-shrink-0 w-56"
               >
                 <Image
-                  src={brand.logo || "/placeholder.svg"}
+                  src={brand.name || "/placeholder.svg"}
                   alt={brand.name}
                   width={200}
                   height={128}

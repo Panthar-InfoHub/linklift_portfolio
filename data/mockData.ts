@@ -1,10 +1,10 @@
 export const navigationLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Solutions", href: "#solutions" },
-  { name: "Work", href: "#work" },
-  { name: "Services", href: "#services" },
-  { name: "FAQ", href: "#faq" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Solutions", href: "/#solutions" },
+  { name: "Work", href: "/#work" },
+  { name: "Services", href: "/#services" },
+  { name: "FAQ", href: "/#faq" },
+  { name: "Contact", href: "/#contact" },
 ]
 
 export const solutions = [
@@ -242,14 +242,14 @@ export const services = [
 ]
 
 export const brandLogos = [
-  { name: "TechCorp", color: "bg-[rgb(200,150,240)]" },
-  { name: "StartupHub", color: "bg-[rgb(150,200,255)]" },
-  { name: "Ecommerce Plus", color: "bg-[rgb(255,180,150)]" },
-  { name: "Digital First", color: "bg-[rgb(200,150,240)]" },
-  { name: "Growth Labs", color: "bg-[rgb(150,200,255)]" },
-  { name: "Brand Co", color: "bg-[rgb(255,180,150)]" },
-  { name: "Innovation Inc", color: "bg-[rgb(200,150,240)]" },
-  { name: "Future Media", color: "bg-[rgb(150,200,255)]" },
+  { name: "/images/1.jpg", color: "bg-[rgb(200,150,240)]" },
+  { name: "/images/2.jpg", color: "bg-[rgb(150,200,255)]" },
+  { name: "/images/3.jpeg", color: "bg-[rgb(255,180,150)]" },
+  { name: "/images/4.jpeg", color: "bg-[rgb(200,150,240)]" },
+  { name: "/images/5.jpeg", color: "bg-[rgb(150,200,255)]" },
+  { name: "/images/6.jpeg", color: "bg-[rgb(255,180,150)]" },
+  { name: "/images/7.png", color: "bg-[rgb(200,150,240)]" },
+  { name: "/images/8.png", color: "bg-[rgb(150,200,255)]" },
 ]
 
 export const instagramCards = [
@@ -297,7 +297,7 @@ export const instagramCards = [
   },
   {
     id: 8,
-    image: "/placeholder.svg?height=500&width=300",
+    image: "/instagram-influencer-collaboration.jpg",
     likes: "2.8K",
     comments: "156",
   },

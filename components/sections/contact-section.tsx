@@ -68,7 +68,7 @@ export function ContactSection() {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-border focus:outline-none focus:border-primary transition-colors"
-                  placeholder="John Doe"
+                  placeholder="Full Name"
                 />
               </div>
 
@@ -83,7 +83,7 @@ export function ContactSection() {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-border focus:outline-none focus:border-primary transition-colors"
-                  placeholder="john@example.com"
+                  placeholder="user@example.com"
                 />
               </div>
             </div>
@@ -99,7 +99,7 @@ export function ContactSection() {
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg border border-border focus:outline-none focus:border-primary transition-colors"
-                placeholder="+1 (555) 123-4567"
+                placeholder="+91 99999 99999"
               />
             </div>
 

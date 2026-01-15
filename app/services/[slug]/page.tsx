@@ -47,12 +47,12 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">{service.title}</h1>
                 <p className="text-lg md:text-xl text-text-muted mb-10 leading-relaxed">{service.description}</p>
                 <div className="flex gap-4">
-                  <button className="px-10 py-5 rounded-lg font-bold text-lg text-white bg-gradient-primary hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                  <button className="px-10 py-5 rounded-lg font-bold text-lg text-white bg-primary bg-gradient-primary hover:shadow-2xl transition-all duration-300 hover:scale-105">
                     Get Started
                   </button>
                   <Link
                     href="/services"
-                    className="px-10 py-5 rounded-lg font-bold text-lg text-primary border-2 border-primary hover:bg-primary/5 transition-all"
+                    className="px-10 py-5 rounded-lg font-bold text-lg text-white border-2 bg-primary hover:bg-primary/5 transition-all"
                   >
                     Back to Services
                   </Link>
@@ -78,7 +78,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                   className="p-6 rounded-lg border border-border bg-white hover:border-primary hover:shadow-lg transition-all duration-300"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-white font-bold flex-shrink-0 text-xl">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-green-600 font-bold flex-shrink-0 text-xl">
                       ✓
                     </div>
                     <div>
@@ -100,9 +100,9 @@ export default async function ServiceDetailPage({ params }: Props) {
               {service.process.map((step, index) => (
                 <div
                   key={index}
-                  className="flex gap-6 items-start p-8 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
+                  className="flex gap-6 items-start p-8 rounded-lg border  border-border hover:border-primary hover:shadow-md transition-all"
                 >
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold text-2xl flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center text-black font-bold text-2xl flex-shrink-0">
                     {index + 1}
                   </div>
                   <div className="flex-1">
@@ -140,7 +140,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                   <button
                     className={`w-full py-4 rounded-lg font-bold text-lg transition-all duration-300 ${
                       index === 1
-                        ? "bg-gradient-primary text-white hover:shadow-2xl hover:scale-105"
+                        ? "bg-gradient-primary bg-primary text-white hover:shadow-2xl hover:scale-105"
                         : "border-2 border-primary text-primary hover:bg-primary/5 font-bold"
                     }`}
                   >
@@ -155,15 +155,15 @@ export default async function ServiceDetailPage({ params }: Props) {
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-primary text-white">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
               Ready to Get Started with {service.title}?
             </h2>
-            <p className="text-lg md:text-xl mb-10 text-white/95 font-medium leading-relaxed">
+            <p className="text-lg md:text-xl mb-10 text-black font-medium leading-relaxed">
               Let{"'"}s discuss how we can help your business achieve its goals.
             </p>
             <Link
               href="/#contact"
-              className="inline-block px-10 py-5 rounded-lg font-bold text-lg bg-white text-primary hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-gray-100"
+              className="inline-block px-10 py-5 rounded-lg font-bold text-lg bg-primary text-white hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-gray-100"
             >
               Get in Touch
             </Link>

@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/animations/scroll-reveal"
 
 export function TrustedBrandsSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-primary-light/5">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background to-primary-light/5">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center">

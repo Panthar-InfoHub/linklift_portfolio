@@ -13,9 +13,9 @@ export default function ServicesPage() {
   return (
     <>
       <Header />
-      <main className="bg-white">
+      <main className="bg-background">
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary-light/10 to-white">
+        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary-light/10 to-background">
           <div className="max-w-7xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">Our Services</h1>
             <p className="text-xl text-text-muted max-w-2xl mx-auto">
@@ -27,7 +27,7 @@ export default function ServicesPage() {
         {/* Services Grid */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service) => (
                 <Link key={service.id} href={`/services/${service.slug}`}>
                   <div className="group h-full rounded-xl overflow-hidden border border-border hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 cursor-pointer">
@@ -59,7 +59,7 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-primary text-white">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-primary text-black">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
               Ready to Transform Your Digital Presence?
@@ -69,7 +69,7 @@ export default function ServicesPage() {
             </p>
             <Link
               href="/#contact"
-              className="inline-block px-10 py-5 rounded-lg font-bold text-lg bg-primary text-white hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-gray-100"
+              className="inline-block px-10 py-5 rounded-lg font-bold text-lg bg-black text-white hover:shadow-2xl transition-all duration-300 hover:scale-110 "
             >
               Get Started
             </Link>

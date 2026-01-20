@@ -35,7 +35,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       <Header />
       <main className="bg-white">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-light/20 via-white to-secondary-light/20 overflow-hidden">
+        <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-light/20 via-background to-secondary-light/20 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-primary-light/20 blur-3xl" />
             <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-secondary-light/20 blur-3xl" />
@@ -47,12 +47,14 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">{service.title}</h1>
                 <p className="text-lg md:text-xl text-text-muted mb-10 leading-relaxed">{service.description}</p>
                 <div className="flex gap-4">
-                  <button className="px-10 py-5 rounded-lg font-bold text-lg text-white bg-primary bg-gradient-primary hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                  <Link href={"#cta"}>
+                  <button  className="px-10 py-5 rounded-lg font-bold text-lg text-white bg-black   bg-gradient-primary hover:shadow-2xl transition-all duration-300 hover:scale-105">
                     Get Started
                   </button>
+                  </Link>
                   <Link
                     href="/services"
-                    className="px-10 py-5 rounded-lg font-bold text-lg text-white border-2 bg-primary hover:bg-primary/5 transition-all"
+                    className="px-10 py-5 rounded-lg font-bold text-lg text-white border-2 bg-black hover:shadow-2xl hover:scale-105 transition-all"
                   >
                     Back to Services
                   </Link>
@@ -67,7 +69,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-primary-light/5">
+        <section className="py-20 px-4 sm:px-6 lg:px-8  bg-background to-primary-light/5">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold text-foreground mb-12 text-center">Benefits of {service.title}</h2>
 
@@ -92,7 +94,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         </section>
 
         {/* Process Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold text-foreground mb-12 text-center">Our Process</h2>
 
@@ -115,7 +117,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         </section>
 
         {/* Pricing Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-primary-light/5">
+        {/* <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-primary-light/5">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold text-foreground mb-12 text-center">Pricing Plans</h2>
 
@@ -125,8 +127,8 @@ export default async function ServiceDetailPage({ params }: Props) {
                   key={index}
                   className={`p-8 rounded-xl border transition-all duration-300 ${
                     index === 1
-                      ? "border-primary bg-gradient-to-br from-primary-light/10 to-white shadow-xl scale-105"
-                      : "border-border bg-white hover:shadow-lg"
+                      ? "border-primary bg-gradient-to-br from-primary-light/10 to-background shadow-xl scale-105"
+                      : "border-border bg-background hover:shadow-lg"
                   }`}
                 >
                   <h3 className="text-2xl font-bold text-foreground mb-2">{plan.tier}</h3>
@@ -150,10 +152,10 @@ export default async function ServiceDetailPage({ params }: Props) {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-primary text-white">
+        <section id="cta"  className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-primary bg-background text-white">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
               Ready to Get Started with {service.title}?

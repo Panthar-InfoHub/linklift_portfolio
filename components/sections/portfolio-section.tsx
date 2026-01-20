@@ -1,78 +1,241 @@
 "use client"
 
-import Image from "next/image"
 import { ScrollReveal } from "@/components/animations/scroll-reveal"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Bar, BarChart, XAxis, YAxis, ResponsiveContainer, Cell, Tooltip } from "recharts"
+import { Eye, Users, UserPlus, TrendingUp } from "lucide-react"
+
+const creatorsData = [
+  {
+    name: "VANYA",
+    handle: "@makeupbyvanyaarora",
+    views: 2234332,
+    reach: 1053488,
+    reachGrowth: 65.3,
+    follows: 455,
+    color: "#f472b6",
+  },
+  {
+    name: "Jai",
+    handle: "@jai__kapoors.muaz",
+    views: 1101235,
+    reach: 109366,
+    reachGrowth: 9.1,
+    follows: 227,
+    color: "#60a5fa",
+  },
+  {
+    name: "Aarushi",
+    handle: "@glamwithaarushi",
+    views: 717196,
+    reach: 345628,
+    reachGrowth: 10.7,
+    follows: 2076,
+    color: "#a78bfa",
+  },
+  {
+    name: "Reet",
+    handle: "@makeoverby_reet",
+    views: 1281339,
+    reach: 408420,
+    reachGrowth: 11.7,
+    follows: 368,
+    color: "#34d399",
+  },
+]
+
+const viewsChartData = creatorsData.map((creator) => ({
+  name: creator.name,
+  views: creator.views,
+  color: creator.color,
+}))
+
+const reachChartData = creatorsData.map((creator) => ({
+  name: creator.name,
+  reach: creator.reach,
+  color: creator.color,
+}))
+
+const followsChartData = creatorsData.map((creator) => ({
+  name: creator.name,
+  follows: creator.follows,
+  color: creator.color,
+}))
+
+function formatNumber(num: number): string {
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(2) + "M"
+  }
+  if (num >= 1000) {
+    return (num / 1000).toFixed(1) + "K"
+  }
+  return num.toString()
+}
 
 export function PortfolioSection() {
-  const portfolioItems = [
-    {
-      id: 1,
-      image: "/marketing-app-interface-with-dark-sidebar.jpg",
-      title: "Marketing Platform",
-      description: "Modern dashboard interface",
-    },
-    {
-      id: 2,
-      image: "/marketing-website-without-borders-design.jpg",
-      title: "Marketing Campaign",
-      description: "Brand expansion strategy",
-    },
-    {
-      id: 3,
-      image: "/dark-website-smarter-decisions-happy-customers.jpg",
-      title: "Decision Portal",
-      description: "Customer-focused design",
-    },
-    {
-      id: 4,
-      image: "/analytics-dashboard-isometric-illustration.jpg",
-      title: "Analytics Dashboard",
-      description: "Data visualization platform",
-    },
-    {
-      id: 5,
-      image: "/blue-website-headline-content-creator.jpg",
-      title: "Content Hub",
-      description: "Creator community platform",
-    },
-    {
-      id: 6,
-      image: "/portrait-photography-grid-mood-board-layout.jpg",
-      title: "Photography Portfolio",
-      description: "Visual storytelling showcase",
-    },
-  ]
-
   return (
-    <section id="work" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="work" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
-          <div className="mb-16">
-            <p className="text-sm font-semibold text-primary mb-2">OUR WORK</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">Work that moves the needle</h2>
+          <div className="mb-16 text-center">
+            <p className="text-sm font-semibold text-primary mb-2">CREATOR METRICS</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
+              Results that speak for themselves
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Real performance data from Instagram creators we have worked with
+            </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {portfolioItems.map((item, index) => (
-            <ScrollReveal key={item.id} delay={index * 50}>
-              <div className="relative group overflow-hidden rounded-3xl aspect-square cursor-pointer">
-                <Image
-                  src={item.image || "/placeholder.svg"}
-                  alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  priority={index < 2}
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end p-6">
-                  <div className="text-white">
-                    <h3 className="text-lg font-bold mb-1">{item.title}</h3>
-                    <p className="text-sm text-white/80">{item.description}</p>
+        {/* Creator Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {creatorsData.map((creator, index) => (
+            <ScrollReveal key={creator.handle} delay={index * 100}>
+              <Card className="bg-card border-border hover:shadow-lg transition-shadow">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-lg font-bold" style={{ color: creator.color }}>
+                    {creator.name}
+                  </CardTitle>
+                  <p className="text-sm text-muted-foreground">{creator.handle}</p>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-pink-100">
+                      <Eye className="w-4 h-4 text-pink-500" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Views</p>
+                      <p className="text-lg font-bold text-foreground">{formatNumber(creator.views)}</p>
+                    </div>
                   </div>
-                </div>
-              </div>
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-blue-100">
+                      <Users className="w-4 h-4 text-blue-500" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Reach</p>
+                      <p className="text-lg font-bold text-foreground">{formatNumber(creator.reach)}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-green-100">
+                      <TrendingUp className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Growth</p>
+                      <p className="text-lg font-bold text-green-600">+{creator.reachGrowth}%</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-purple-100">
+                      <UserPlus className="w-4 h-4 text-purple-500" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">New Follows</p>
+                      <p className="text-lg font-bold text-foreground">{formatNumber(creator.follows)}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </ScrollReveal>
           ))}
+        </div>
+
+        {/* Charts Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Views Chart */}
+          <ScrollReveal delay={100}>
+            <Card className="bg-card border-border">
+              <CardHeader>
+                <CardTitle className="text-lg font-bold text-foreground flex items-center gap-2">
+                  <Eye className="w-5 h-5 text-pink-500" />
+                  Total Views
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="h-[250px]">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={viewsChartData} layout="vertical" margin={{ left: 10, right: 20 }}>
+                      <XAxis type="number" tickFormatter={(value) => formatNumber(value)} fontSize={12} />
+                      <YAxis type="category" dataKey="name" fontSize={12} width={60} />
+                      <Tooltip
+                        formatter={(value: number) => [formatNumber(value), "Views"]}
+                        contentStyle={{ backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: "8px" }}
+                      />
+                      <Bar dataKey="views" radius={[0, 4, 4, 0]}>
+                        {viewsChartData.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
+
+          {/* Reach Chart */}
+          <ScrollReveal delay={200}>
+            <Card className="bg-card border-border">
+              <CardHeader>
+                <CardTitle className="text-lg font-bold text-foreground flex items-center gap-2">
+                  <Users className="w-5 h-5 text-blue-500" />
+                  Total Reach
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="h-[250px]">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={reachChartData} layout="vertical" margin={{ left: 10, right: 20 }}>
+                      <XAxis type="number" tickFormatter={(value) => formatNumber(value)} fontSize={12} />
+                      <YAxis type="category" dataKey="name" fontSize={12} width={60} />
+                      <Tooltip
+                        formatter={(value: number) => [formatNumber(value), "Reach"]}
+                        contentStyle={{ backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: "8px" }}
+                      />
+                      <Bar dataKey="reach" radius={[0, 4, 4, 0]}>
+                        {reachChartData.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
+
+          {/* Follows Chart */}
+          <ScrollReveal delay={300}>
+            <Card className="bg-card border-border">
+              <CardHeader>
+                <CardTitle className="text-lg font-bold text-foreground flex items-center gap-2">
+                  <UserPlus className="w-5 h-5 text-purple-500" />
+                  New Followers
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="h-[250px]">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={followsChartData} layout="vertical" margin={{ left: 10, right: 20 }}>
+                      <XAxis type="number" tickFormatter={(value) => formatNumber(value)} fontSize={12} />
+                      <YAxis type="category" dataKey="name" fontSize={12} width={60} />
+                      <Tooltip
+                        formatter={(value: number) => [formatNumber(value), "Follows"]}
+                        contentStyle={{ backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: "8px" }}
+                      />
+                      <Bar dataKey="follows" radius={[0, 4, 4, 0]}>
+                        {followsChartData.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Search, Share2, DollarSign, FileText, Users, Palette, Globe, Mail } from "lucide-react"
+import { Share2, Target, MapPin, Megaphone, Globe, Search, Video, Palette, FileText, MessageCircle, DollarSign, Users, Mail } from "lucide-react"
 
 export function HeroSection() {
   const [animateText, setAnimateText] = useState(false)
@@ -12,65 +12,79 @@ export function HeroSection() {
 
   const services = [
     {
-      title: "SEO",
-      description: "Improve your organic visibility",
-      icon: Search,
-      bgColor: "bg-purple-100",
-      textColor: "text-purple-400",
-    },
-    {
-      title: "Social Media Marketing",
-      description: "Build engaged communities",
+      title: "Social Media Management",
+      description: "Build visibility & engagement",
       icon: Share2,
       bgColor: "bg-pink-100",
       textColor: "text-pink-400",
     },
     {
-      title: "PPC Advertising",
-      description: "Get immediate results",
-      icon: DollarSign,
-      bgColor: "bg-yellow-50",
-      textColor: "text-yellow-600",
-    },
-    {
-      title: "Content Marketing",
-      description: "Create valuable content",
-      icon: FileText,
-      bgColor: "bg-teal-100",
-      textColor: "text-teal-400",
-    },
-    {
-      title: "Influencer Marketing",
-      description: "Leverage influencer partnerships",
-      icon: Users,
-      bgColor: "bg-purple-50",
-      textColor: "text-purple-400",
-    },
-    {
-      title: "Branding",
-      description: "Build a strong brand identity",
-      icon: Palette,
+      title: "Meta Ads",
+      description: "Generate leads & inquiries",
+      icon: Target,
       bgColor: "bg-blue-100",
       textColor: "text-blue-400",
     },
     {
-      title: "Website Development",
-      description: "Modern, fast websites",
-      icon: Globe,
+      title: "Google My Business",
+      description: "Improve local SEO",
+      icon: MapPin,
       bgColor: "bg-green-100",
       textColor: "text-green-400",
     },
     {
-      title: "Email Marketing",
-      description: "Build relationships",
-      icon: Mail,
+      title: "GMB Ads",
+      description: "Local search advertising",
+      icon: Megaphone,
+      bgColor: "bg-yellow-50",
+      textColor: "text-yellow-600",
+    },
+    {
+      title: "Website",
+      description: "Professional web design",
+      icon: Globe,
+      bgColor: "bg-purple-100",
+      textColor: "text-purple-400",
+    },
+    {
+      title: "SEO",
+      description: "Drive organic traffic",
+      icon: Search,
+      bgColor: "bg-teal-100",
+      textColor: "text-teal-400",
+    },
+    {
+      title: "Video Editing",
+      description: "Engaging social content",
+      icon: Video,
+      bgColor: "bg-red-100",
+      textColor: "text-red-400",
+    },
+    {
+      title: "Graphic Designing",
+      description: "Attractive brand creatives",
+      icon: Palette,
+      bgColor: "bg-indigo-100",
+      textColor: "text-indigo-400",
+    },
+    {
+      title: "Company Profile",
+      description: "Showcase your business",
+      icon: FileText,
       bgColor: "bg-orange-100",
       textColor: "text-orange-400",
+    },
+    {
+      title: "WhatsApp Marketing",
+      description: "Direct customer outreach",
+      icon: MessageCircle,
+      bgColor: "bg-emerald-100",
+      textColor: "text-emerald-400",
     },
   ]
 
   return (
-    <section id="home" className="min-h-screen bg-stone-100 pt-32 pb-16">
+    <section id="home" className="min-h-screen bg-background pt-32 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Column - Text Content */}

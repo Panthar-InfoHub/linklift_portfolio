@@ -7,27 +7,27 @@ export function WhyChooseSection() {
     {
       id: 1,
       title: "Expert Team",
-      description: "Our team has 15+ years of combined digital marketing experience",
+      description: "A dedicated digital marketing team that connects with clients, understands their brand and challenges, and works hands-on to plan, execute, and grow together.",
     },
     {
       id: 2,
       title: "Proven Results",
-      description: "We've helped 250+ brands scale with measurable ROI",
+      description: "We focus on meaningful results, not instant claims. A three-month working period helps us plan better, execute properly, and show genuine progress in reach, engagement, and leads.",
     },
     {
       id: 3,
       title: "Custom Solutions",
-      description: "Every strategy is tailored to your unique business needs",
+      description: "We understand our clients first, and then design strategies that align with their goals and connect with their audience.",
     },
     {
       id: 4,
-      title: "Transparent Reporting",
-      description: "Monthly reports showing exactly what we're doing and the results",
+      title: "Performance Reporting",
+      description: "Clear updates, meaningful data, and no hidden metrics. In three months, we’ll show measurable growth and real progress.",
     },
   ]
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center">Why Choose Link Lift</h2>

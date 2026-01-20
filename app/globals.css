@@ -23,7 +23,7 @@
   --color-border: #e6dcf0;
   --color-card: #ffffff;
   --color-text-muted: #78829e;
-  --color-background: #fffafa;
+  --color-background: #FEECD4;
   --color-foreground: #2d323c;
 
   /* Default shadcn colors for compatibility */
@@ -117,11 +117,11 @@
   }
 
   .animate-scroll-left {
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 6s linear infinite;
   }
 
   .animate-scroll-right {
-    animation: scroll-right 30s linear infinite;
+    animation: scroll-right 6s linear infinite;
   }
 
   /* Added slide-in animation for hero service cards */

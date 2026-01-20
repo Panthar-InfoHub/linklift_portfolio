@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/animations/scroll-reveal"
 
 export function FaqSection() {
   return (
-    <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-primary-light/5">
+    <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-background to-primary-light/5">
       <div className="max-w-3xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-16">
